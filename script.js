@@ -1,54 +1,53 @@
 // script.js
 
 function calculateTotal() {
-  // Coin roll values (in cents)
-  const COIN_VALUES = {
-    pennyRolls: 50 * 0.01,
-    nickelRolls: 40 * 0.05,
-    dimeRolls: 50 * 0.10,
-    quarterRolls: 40 * 0.25
+  const coinRolls = {
+    pennyRolls: 0.50,
+    nickelRolls: 2.00,
+    dimeRolls: 5.00,
+    quarterRolls: 10.00,
+    halfRolls: 10.00,
+    dollarCoinRolls: 25.00
   };
 
-  // Bill values
-  const BILL_VALUES = {
+  const bills = {
     oneBills: 1,
+    twoBills: 2,
     fiveBills: 5,
     tenBills: 10,
-    twentyBills: 20
+    twentyBills: 20,
+    fiftyBills: 50,
+    hundredBills: 100
   };
 
   let coinTotal = 0;
   let billTotal = 0;
-  let summaryHTML = "<h2>Summary</h2>";
+  let summary = `<h2>🧾 Summary</h2>`;
 
-  // Compute coin totals
-  for (let id in COIN_VALUES) {
+  // Coin roll subtotal
+  for (let id in coinRolls) {
     const qty = parseInt(document.getElementById(id).value) || 0;
-    const subtotal = qty * COIN_VALUES[id];
+    const subtotal = qty * coinRolls[id];
     coinTotal += subtotal;
-    summaryHTML += `<p>${formatLabel(id)}: ${qty} roll(s) = $${subtotal.toFixed(2)}</p>`;
+    summary += `<p>${format(id)}: ${qty} rolls = $${subtotal.toFixed(2)}</p>`;
   }
 
-  // Compute bill totals
-  for (let id in BILL_VALUES) {
+  // Bill subtotal
+  for (let id in bills) {
     const qty = parseInt(document.getElementById(id).value) || 0;
-    const subtotal = qty * BILL_VALUES[id];
+    const subtotal = qty * bills[id];
     billTotal += subtotal;
-    summaryHTML += `<p>${formatLabel(id)}: ${qty} bill(s) = $${subtotal.toFixed(2)}</p>`;
+    summary += `<p>${format(id)}: ${qty} bills = $${subtotal.toFixed(2)}</p>`;
   }
 
-  const grandTotal = coinTotal + billTotal;
-  summaryHTML += `<hr><p><strong>Coin Total: $${coinTotal.toFixed(2)}</strong></p>`;
-  summaryHTML += `<p><strong>Bill Total: $${billTotal.toFixed(2)}</strong></p>`;
-  summaryHTML += `<p><strong>Grand Total: $${grandTotal.toFixed(2)}</strong></p>`;
+  const total = coinTotal + billTotal;
+  summary += `<hr><p><strong>Coin Total: $${coinTotal.toFixed(2)}</strong></p>`;
+  summary += `<p><strong>Bill Total: $${billTotal.toFixed(2)}</strong></p>`;
+  summary += `<p><strong>Grand Total: $${total.toFixed(2)}</strong></p>`;
 
-  document.getElementById("summary").innerHTML = summaryHTML;
+  document.getElementById("summary").innerHTML = summary;
 }
 
-function formatLabel(id) {
-  return id
-    .replace(/([A-Z])/g, ' $1')         // split camelCase
-    .replace("Rolls", " Rolls")         // clarity for coins
-    .replace("Bills", " Bills")         // clarity for bills
-    .replace(/^./, s => s.toUpperCase()); // capitalize
+function format(id) {
+  return id.replace(/([A-Z])/g, " $1").replace(/^./, s => s.toUpperCase());
 }

@@ -1,5 +1,3 @@
-// script.js
-
 function calculateTotal() {
   const coinRolls = {
     pennyRolls: 0.50,
@@ -22,14 +20,16 @@ function calculateTotal() {
 
   let coinTotal = 0;
   let billTotal = 0;
-  let summary = `<h2>🧾 Summary</h2>`;
+  let summary = `<h2>Summary</h2><div class='receipt'>`;
 
   // Coin roll subtotal
   for (let id in coinRolls) {
     const qty = parseInt(document.getElementById(id).value) || 0;
     const subtotal = qty * coinRolls[id];
     coinTotal += subtotal;
-    summary += `<p>${format(id)}: ${qty} rolls = $${subtotal.toFixed(2)}</p>`;
+    if (qty > 0) {
+      summary += `<p>${idLabel(id)} x ${qty} = $${subtotal.toFixed(2)}</p>`;
+    }
   }
 
   // Bill subtotal
@@ -37,17 +37,32 @@ function calculateTotal() {
     const qty = parseInt(document.getElementById(id).value) || 0;
     const subtotal = qty * bills[id];
     billTotal += subtotal;
-    summary += `<p>${format(id)}: ${qty} bills = $${subtotal.toFixed(2)}</p>`;
+    if (qty > 0) {
+      summary += `<p>${idLabel(id)} x ${qty} = $${subtotal.toFixed(2)}</p>`;
+    }
   }
 
   const total = coinTotal + billTotal;
-  summary += `<hr><p><strong>Coin Total: $${coinTotal.toFixed(2)}</strong></p>`;
-  summary += `<p><strong>Bill Total: $${billTotal.toFixed(2)}</strong></p>`;
-  summary += `<p><strong>Grand Total: $${total.toFixed(2)}</strong></p>`;
+  summary += `<hr><p><strong>Total: $${total.toFixed(2)}</strong></p></div>`;
 
   document.getElementById("summary").innerHTML = summary;
 }
 
-function format(id) {
-  return id.replace(/([A-Z])/g, " $1").replace(/^./, s => s.toUpperCase());
+function idLabel(id) {
+  const map = {
+    pennyRolls: "1¢",
+    nickelRolls: "5¢",
+    dimeRolls: "10¢",
+    quarterRolls: "25¢",
+    halfRolls: "50¢",
+    dollarCoinRolls: "$1",
+    oneBills: "$1",
+    twoBills: "$2",
+    fiveBills: "$5",
+    tenBills: "$10",
+    twentyBills: "$20",
+    fiftyBills: "$50",
+    hundredBills: "$100"
+  };
+  return map[id] || id;
 }

@@ -3,39 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cash Counter Pro</title>
+  <title>Cash Counter</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="container">
-    <h1>🧮 Cash Counter</h1>
+    <h1>Cash Counter</h1>
 
     <section class="group">
-      <h2>🪙 Coin Rolls</h2>
-      <div class="row">
-        <label><span>1¢ (50)</span><input type="number" id="pennyRolls" min="0" /></label>
-        <label><span>5¢ (40)</span><input type="number" id="nickelRolls" min="0" /></label>
-        <label><span>10¢ (50)</span><input type="number" id="dimeRolls" min="0" /></label>
-        <label><span>25¢ (40)</span><input type="number" id="quarterRolls" min="0" /></label>
-        <label><span>50¢ (20)</span><input type="number" id="halfRolls" min="0" /></label>
-        <label><span>$1 (25)</span><input type="number" id="dollarCoinRolls" min="0" /></label>
-      </div>
+      <h2>Coin Rolls</h2>
+      <div class="row"><span>1¢ (50)</span><input type="number" id="pennyRolls" min="0" /></div>
+      <div class="row"><span>5¢ (40)</span><input type="number" id="nickelRolls" min="0" /></div>
+      <div class="row"><span>10¢ (50)</span><input type="number" id="dimeRolls" min="0" /></div>
+      <div class="row"><span>25¢ (40)</span><input type="number" id="quarterRolls" min="0" /></div>
+      <div class="row"><span>50¢ (20)</span><input type="number" id="halfRolls" min="0" /></div>
+      <div class="row"><span>$1 (25)</span><input type="number" id="dollarCoinRolls" min="0" /></div>
     </section>
 
     <section class="group">
-      <h2>💵 Bills</h2>
-      <div class="row">
-        <label><span>$1</span><input type="number" id="oneBills" min="0" /></label>
-        <label><span>$2</span><input type="number" id="twoBills" min="0" /></label>
-        <label><span>$5</span><input type="number" id="fiveBills" min="0" /></label>
-        <label><span>$10</span><input type="number" id="tenBills" min="0" /></label>
-        <label><span>$20</span><input type="number" id="twentyBills" min="0" /></label>
-        <label><span>$50</span><input type="number" id="fiftyBills" min="0" /></label>
-        <label><span>$100</span><input type="number" id="hundredBills" min="0" /></label>
-      </div>
+      <h2>Bills</h2>
+      <div class="row"><span>$1</span><input type="number" id="oneBills" min="0" /></div>
+      <div class="row"><span>$2</span><input type="number" id="twoBills" min="0" /></div>
+      <div class="row"><span>$5</span><input type="number" id="fiveBills" min="0" /></div>
+      <div class="row"><span>$10</span><input type="number" id="tenBills" min="0" /></div>
+      <div class="row"><span>$20</span><input type="number" id="twentyBills" min="0" /></div>
+      <div class="row"><span>$50</span><input type="number" id="fiftyBills" min="0" /></div>
+      <div class="row"><span>$100</span><input type="number" id="hundredBills" min="0" /></div>
     </section>
 
-    <button onclick="calculateTotal()">🧾 Calculate Total</button>
+    <button onclick="calculateTotal()">Calculate Total</button>
     <div id="summary" class="summary"></div>
   </div>
   <script src="script.js"></script>

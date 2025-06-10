@@ -1,82 +1,85 @@
-/* styles.css – Row Mode Optimized */
+/* Smart Visual UI – Minimal & Clear */
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #f7f7f7;
+  background: #f6f6f6;
   margin: 0;
   padding: 0;
-  color: #222;
 }
 
 .container {
   max-width: 500px;
-  margin: 20px auto;
-  padding: 16px;
-  background: #ffffff;
+  margin: 0 auto;
+  padding: 24px 16px;
+  background: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
 }
 
 h1 {
-  font-size: 20px;
+  font-size: 22px;
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 h2 {
   font-size: 16px;
-  margin: 20px 0 10px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 4px;
+  margin-top: 24px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
 }
 
-.group {
-  margin-bottom: 16px;
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 6px 0;
+  background: #f9f9f9;
+  padding: 6px 12px;
+  border-radius: 6px;
 }
 
 .row span {
   font-size: 14px;
-  width: 130px;
   color: #333;
+  flex: 1;
 }
 
-.row input[type="number"] {
-  width: 80px;
-  padding: 6px;
-  font-size: 14px;
-  text-align: right;
+.row input {
+  width: 70px;
+  font-size: 16px;
+  padding: 4px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  text-align: right;
 }
 
 button {
   width: 100%;
   padding: 12px;
+  margin-top: 20px;
   font-size: 16px;
-  background-color: #007f5f;
+  background: #007f5f;
   color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  margin-top: 20px;
 }
 
 button:hover {
-  background-color: #005f47;
+  background: #005f47;
 }
 
 .summary {
   margin-top: 20px;
   padding: 16px;
-  background: #e9fdf3;
+  background: #eafff3;
+  border-left: 4px solid #00a77a;
   border-radius: 6px;
   font-size: 14px;
-  line-height: 1.5;
 }

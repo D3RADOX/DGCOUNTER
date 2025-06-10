@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cash Counter</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Full Cash Counter</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="container">
-    <h1>Dollar Counter</h1>
+    <h1>🧮 Cash Counter</h1>
 
-    <section class="input-section">
-      <h2>Coins</h2>
-      <label>Penny Rolls: <input type="number" id="pennyRolls" min="0"></label>
-      <label>Nickel Rolls: <input type="number" id="nickelRolls" min="0"></label>
-      <label>Dime Rolls: <input type="number" id="dimeRolls" min="0"></label>
-      <label>Quarter Rolls: <input type="number" id="quarterRolls" min="0"></label>
+    <section class="card">
+      <h2>🪙 Coins (Rolls)</h2>
+      <div class="grid">
+        <label>Pennies (50): <input type="number" id="pennyRolls" min="0" /></label>
+        <label>Nickels (40): <input type="number" id="nickelRolls" min="0" /></label>
+        <label>Dimes (50): <input type="number" id="dimeRolls" min="0" /></label>
+        <label>Quarters (40): <input type="number" id="quarterRolls" min="0" /></label>
+        <label>Half Dollars (20): <input type="number" id="halfRolls" min="0" /></label>
+        <label>Dollar Coins (25): <input type="number" id="dollarCoinRolls" min="0" /></label>
+      </div>
     </section>
 
-    <section class="input-section">
-      <h2>Bills</h2>
-      <label>$1 Bills: <input type="number" id="oneBills" min="0"></label>
-      <label>$5 Bills: <input type="number" id="fiveBills" min="0"></label>
-      <label>$10 Bills: <input type="number" id="tenBills" min="0"></label>
-      <label>$20 Bills: <input type="number" id="twentyBills" min="0"></label>
+    <section class="card">
+      <h2>💵 Bills</h2>
+      <div class="grid">
+        <label>$1: <input type="number" id="oneBills" min="0" /></label>
+        <label>$2: <input type="number" id="twoBills" min="0" /></label>
+        <label>$5: <input type="number" id="fiveBills" min="0" /></label>
+        <label>$10: <input type="number" id="tenBills" min="0" /></label>
+        <label>$20: <input type="number" id="twentyBills" min="0" /></label>
+        <label>$50: <input type="number" id="fiftyBills" min="0" /></label>
+        <label>$100: <input type="number" id="hundredBills" min="0" /></label>
+      </div>
     </section>
 
-    <button onclick="calculateTotal()">Calculate Total</button>
-
-    <section id="summary"></section>
+    <button onclick="calculateTotal()">🧾 Calculate Total</button>
+    <section id="summary" class="summary-box"></section>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>

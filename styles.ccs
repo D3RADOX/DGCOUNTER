@@ -1,8 +1,8 @@
-/* styles.css — Compact Mobile-First */
+/* styles.css — Clean, tight layout */
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #f4f4f4;
+  background: #f7f7f7;
   margin: 0;
   padding: 0;
   color: #222;
@@ -10,75 +10,81 @@ body {
 
 .container {
   max-width: 600px;
-  margin: auto;
+  margin: 20px auto;
   padding: 16px;
-  background: #fff;
+  background: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 h1 {
   font-size: 20px;
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
+  color: #111;
 }
 
-.card {
-  background: #fafafa;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 12px;
-  margin-bottom: 16px;
+.group {
+  margin-bottom: 24px;
 }
 
-.card h2 {
+.group h2 {
   font-size: 16px;
-  margin: 0 0 10px 0;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 6px;
+  color: #333;
 }
 
-.grid {
+.row {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  justify-content: flex-start;
+  gap: 8px 12px;
 }
 
 label {
   display: flex;
   flex-direction: column;
   font-size: 13px;
-  width: 85px;
+  width: 90px;
+}
+
+label span {
+  font-weight: 500;
+  margin-bottom: 2px;
+  color: #333;
 }
 
 input[type="number"] {
-  width: 80px;
   font-size: 14px;
-  padding: 6px 4px;
+  padding: 4px 6px;
+  width: 70px;
   border: 1px solid #ccc;
   border-radius: 4px;
   text-align: right;
+  background: #fefefe;
 }
 
 button {
   width: 100%;
   padding: 12px;
   font-size: 16px;
-  background-color: #00694f;
-  color: #fff;
+  background-color: #007f5f;
+  color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #004d39;
+  background-color: #005f47;
 }
 
-.summary-box {
-  margin-top: 18px;
-  background: #eefdf4;
-  padding: 12px;
+.summary {
+  margin-top: 20px;
+  padding: 16px;
+  background: #e9fdf3;
   border-radius: 6px;
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.4;
 }
